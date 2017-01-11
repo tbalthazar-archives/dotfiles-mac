@@ -94,3 +94,6 @@ map <C-n> :NERDTreeToggle<CR>
 " --- add background transparency
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
+
+" --- mac specific
+set clipboard=unnamed
