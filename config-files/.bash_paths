@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# custom scripts
+PATH="$HOME/.bin:$PATH"
+
+# rbenv
+RBENV_BIN="$HOME/.rbenv/bin"
+if [ -d  "$RBENV_BIN" ]; then
+  PATH="$RBENV_BIN:$PATH"
+  eval "$(rbenv init -)"
+fi
+
+# heroku
+PATH="/usr/local/heroku/bin:$PATH"
+
+# go
+export GOPATH=$HOME/Code/go
+PATH="/usr/local/go/bin:$PATH"
+PATH="$PATH:$GOPATH/bin"
+
+export PATH
