@@ -31,7 +31,7 @@ get_dotfiles() {
   done;
   
   # copy all the dotfiles to the DEST_DIR
-  CP_CMD="cd config-files && find . -type f -exec ditto \{\} $HOME \;"
+  CP_CMD="cd config-files && find . -type f -exec rsync -R \{\} $HOME \;"
   eval $CP_CMD
 
   # install/update vim plugins
