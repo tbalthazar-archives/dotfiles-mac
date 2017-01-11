@@ -50,7 +50,7 @@ install_brew() {
 }
 
 install_brew_packages() {
-  PKGS=('git' 'tmux' 'vim')
+  PKGS=('git' 'reattach-to-user-namespace' 'tmux' 'vim')
 
   for pkg in ${PKGS[@]}; do
     if brew list -1 | grep -q "^${pkg}\$"; then
