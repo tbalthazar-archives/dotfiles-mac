@@ -50,7 +50,7 @@ install_brew() {
 }
 
 install_brew_packages() {
-  PKGS=('git' 'htop' 'reattach-to-user-namespace' 'tmux' 'vim' 'wget')
+  PKGS=('git' 'htop' 'mpd' 'ncmpcpp' 'reattach-to-user-namespace' 'tmux' 'vim' 'wget')
 
   for pkg in ${PKGS[@]}; do
     if brew list -1 | grep -q "^${pkg}\$"; then
@@ -97,12 +97,18 @@ install_ruby() {
   gem install bundler
 }
 
+# create directories for mpd
+music() {
+  cd $HOME && mkdir .mpd && cd .mpd && mkdir playlists && touch mpd.db mpd.log mpd.pid mpdstate
+}
+
 # install base system packages
 base() {
   install_brew
   install_brew_packages
   install_ruby
 }
+
 
 usage() {
 	echo -e "install.sh\n\tThis script installs my basic setup for a macOS laptop.\n"
