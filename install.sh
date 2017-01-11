@@ -60,6 +60,7 @@ install_brew_packages() {
       brew install "$pkg"
     fi
   done
+  brew services start mpd
 }
 
 install_ruby() {
@@ -98,12 +99,13 @@ install_ruby() {
 }
 
 # create directories for mpd
-music() {
-  cd $HOME && mkdir .mpd && cd .mpd && mkdir playlists && touch mpd.db mpd.log mpd.pid mpdstate
+setup_music() {
+  cd $HOME && mkdir -p .mpd && cd .mpd && mkdir -p playlists && touch mpd.db mpd.log mpd.pid mpdstate
 }
 
 # install base system packages
 base() {
+  setup_music
   install_brew
   install_brew_packages
   install_ruby
