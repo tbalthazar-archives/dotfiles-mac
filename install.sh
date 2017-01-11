@@ -40,7 +40,7 @@ get_dotfiles() {
   source "$HOME/.bash_profile"
 }
 
-brew() {
+install_brew() {
   if command -v brew; then
     echo "Homebrew installed; updating:"
     brew update
@@ -49,7 +49,7 @@ brew() {
   fi
 }
 
-brew_packages() {
+install_brew_packages() {
   PKGS=('git' 'rbenv' 'ruby-build' 'tmux' 'vim')
 
   for pkg in ${PKGS[@]}; do
@@ -62,7 +62,7 @@ brew_packages() {
   done
 }
 
-ruby() {
+install_ruby() {
   ## Set up ruby
   RUBY_VERSION="2.3.3"
   if [ -d ".rbenv/versions/$RUBY_VERSION" ]; then
@@ -77,9 +77,9 @@ ruby() {
 
 # install base system packages
 base() {
-  brew
-  brew_packages
-  ruby
+  install_brew
+  install_brew_packages
+  install_ruby
 }
 
 usage() {
