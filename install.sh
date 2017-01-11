@@ -50,7 +50,7 @@ brew() {
 }
 
 brew_packages() {
-  PKGS=('rbenv' 'ruby-build' 'tmux' 'vim')
+  PKGS=('git' 'rbenv' 'ruby-build' 'tmux' 'vim')
 
   for pkg in ${PKGS[@]}; do
     if brew list -1 | grep -q "^${pkg}\$"; then
