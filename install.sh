@@ -31,7 +31,7 @@ get_dotfiles() {
   done;
   
   # copy all the dotfiles to the DEST_DIR
-  CP_CMD="cd config-files && find . -type f -exec cp --parents \{\} $HOME \;"
+  CP_CMD="cd config-files && find . -type f -exec ditto \{\} $HOME \;"
   eval $CP_CMD
 
   # install/update vim plugins
@@ -100,7 +100,6 @@ main() {
   if [[ $cmd == "base" ]]; then
     base
   elif [[ $cmd == "dotfiles" ]]; then
-    check_is_not_sudo
     get_dotfiles
   else
     usage

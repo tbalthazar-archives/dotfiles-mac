@@ -1,11 +1,11 @@
 [core]
-	excludesfile = ~/.gitignore
-	quotepath = false
+  excludesfile = ~/.gitignore
+  quotepath = false
   editor = vim -f
 [diff]
-  tool = meld
+  tool = vimdiff
 [push]
-	default = matching
+  default = matching
 [user]
-	name = Thomas Balthazar
-	email = thomas@balthazar.info
+  name = Thomas Balthazar
+  email = thomas@balthazar.info
