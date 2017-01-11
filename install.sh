@@ -50,7 +50,7 @@ install_brew() {
 }
 
 install_brew_packages() {
-  PKGS=('git' 'rbenv' 'ruby-build' 'tmux' 'vim')
+  PKGS=('git' 'tmux' 'vim')
 
   for pkg in ${PKGS[@]}; do
     if brew list -1 | grep -q "^${pkg}\$"; then
@@ -63,9 +63,31 @@ install_brew_packages() {
 }
 
 install_ruby() {
+  # rbenv
+  RBENV_DIR="$HOME/.rbenv"
+  RBENV_REPO="https://github.com/rbenv/rbenv.git"
+  if [ -d $RBENV_DIR ]; then
+    echo "Updating rbenv..."
+    cd $RBENV_DIR
+    git pull
+  else
+    git clone $RBENV_REPO $RBENV_DIR
+  fi
+
+  # ruby-build
+  RUBY_BUILD_DIR="$RBENV_DIR/plugins/ruby-build"
+  RUBY_BUILD_REPO="https://github.com/rbenv/ruby-build.git"
+  if [ -d $RUBY_BUILD_DIR ]; then
+    echo "Updating ruby-build..."
+    cd $RUBY_BUILD_DIR
+    git pull
+  else
+    git clone  $RUBY_BUILD_REPO $RUBY_BUILD_DIR
+  fi
+
   ## Set up ruby
   RUBY_VERSION="2.3.3"
-  if [ -d ".rbenv/versions/$RUBY_VERSION" ]; then
+  if [ -d "$RBENV_DIR/versions/$RUBY_VERSION" ]; then
     echo "Ruby $RUBY_VERSION already installed"
   else
     rbenv install "$RUBY_VERSION"
