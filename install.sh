@@ -50,7 +50,7 @@ install_brew() {
 }
 
 install_brew_packages() {
-  PKGS=('git' 'htop' 'mpd' 'ncmpcpp' 'reattach-to-user-namespace' 'tmux' 'vim' 'wget')
+  PKGS=('git' 'gpg' 'htop' 'mpd' 'ncmpcpp' 'reattach-to-user-namespace' 'tmux' 'vim' 'wget')
 
   for pkg in ${PKGS[@]}; do
     if brew list -1 | grep -q "^${pkg}\$"; then
@@ -85,6 +85,8 @@ install_ruby() {
   else
     git clone  $RUBY_BUILD_REPO $RUBY_BUILD_DIR
   fi
+
+  source ~/.bash_profile
 
   ## Set up ruby
   RUBY_VERSION="2.3.3"
