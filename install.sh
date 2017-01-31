@@ -34,6 +34,9 @@ get_dotfiles() {
   CP_CMD="cd config-files && find . -type f -exec rsync -R \{\} $HOME \;"
   eval $CP_CMD
 
+  # mpd specific
+  echo "user                    \"$USER\"" >> "$HOME/.mpd/mpd.conf"
+
   # install/update vim plugins
   vim +PlugUpdate +qall
 
