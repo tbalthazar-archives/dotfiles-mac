@@ -21,5 +21,8 @@ export HISTIGNORE=""
 # shells instead of the default "last window closed" history
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
+# Disable Spring (for Rails)
+export DISABLE_SPRING=1
+
 # Set the TERM var outside of TMUX
 [ -z "$TMUX" ] && export TERM=xterm-256color
