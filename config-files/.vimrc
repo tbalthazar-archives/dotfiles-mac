@@ -9,6 +9,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'fatih/vim-go'
 Plug 'scrooloose/nerdtree'
 Plug 'vimwiki/vimwiki'
+Plug 'wincent/command-t', { 'do': 'cd ruby/command-t && make clean && ruby extconf.rb && make' }
 
 call plug#end()
 
@@ -24,6 +25,10 @@ autocmd VimResized * :wincmd =
 " --- zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
+
+" --- commandT
+map <C-t> :CommandT<CR>
+map <C-b> :CommandTBuffer<CR>
 
 " --- set the ctag file
 set tags=./tags;
