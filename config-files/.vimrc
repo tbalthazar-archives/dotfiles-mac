@@ -10,7 +10,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'fatih/vim-go'
 Plug 'scrooloose/nerdtree'
 Plug 'vimwiki/vimwiki'
-Plug 'wincent/command-t', { 'do': 'cd ruby/command-t && make clean && ruby extconf.rb && make' }
+Plug 'wincent/command-t', { 'do': 'cd ruby/command-t && ruby extconf.rb && make' }
 
 call plug#end()
 
@@ -30,6 +30,8 @@ nnoremap <leader>= :wincmd =<cr>
 " --- commandT
 map <C-t> :CommandT<CR>
 map <C-b> :CommandTBuffer<CR>
+let g:CommandTSelectPrevMap='<C-k>'
+let g:CommandTAcceptSelectionSplitMap='<C-p>'
 
 " --- set the ctag file
 set tags=./tags;
