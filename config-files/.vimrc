@@ -15,6 +15,9 @@ Plug 'wincent/command-t', { 'do': 'cd ruby/command-t && ruby extconf.rb && make'
 
 call plug#end()
 
+" --- leader key
+let mapleader = ","
+
 " --- ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
