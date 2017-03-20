@@ -53,7 +53,7 @@ install_brew() {
 }
 
 install_brew_packages() {
-  PKGS=('git' 'gpg' 'heroku' 'httpie' 'htop' 'jq' 'mpd' 'ncmpcpp' 'reattach-to-user-namespace' 'redis' 'tmux' 'vim' 'wget')
+  PKGS=('git' 'gpg' 'heroku' 'httpie' 'htop' 'jq' 'mpc' 'mpd' 'ncmpcpp' 'reattach-to-user-namespace' 'redis' 'tmux' 'vim' 'wget')
 
   for pkg in ${PKGS[@]}; do
     if brew list -1 | grep -q "^${pkg}\$"; then
