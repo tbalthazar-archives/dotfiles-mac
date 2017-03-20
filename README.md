@@ -20,10 +20,8 @@ $ ./install.sh base
 
 ## Firefox Add-ons
 
-- [Tab Groups](https://addons.mozilla.org/nl/firefox/addon/tab-groups-panorama/)
 - [Privacy Badger](https://addons.mozilla.org/nl/firefox/addon/privacy-badger17/)
 - [HTTPS Everywhere](https://addons.mozilla.org/nl/firefox/addon/https-everywhere/)
-- [Vimperator](https://addons.mozilla.org/nl/firefox/addon/vimperator/)
 - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
 
 ## System Preferences
@@ -38,6 +36,15 @@ $ ./install.sh base
 	- Mouse & Trackpad > Trackpad Options… > Enable dragging (three finger drag)
 - Security & Privacy > FileVault > Turn On FileVault…
 
+## MPC Service
+
+- Automator > New Service
+  - Service receives `no input`
+  - Add Run Shell Script action
+  - `/usr/local/bin/mpc toggle`
+- Save as General service
+- Add keyboard shortcut: cmd+shift+option+P
+
 ## Keyboard Shortcuts
 
 - Mission Control >
@@ -46,5 +53,6 @@ $ ./install.sh base
 	- Move left a space: ⌃⇧H
 	- Move right a space: ⌃⇧L
 - Spotlight >
-	- Show Spotlight search: ⌃⇧Space
 	- Show Finder search window: uncheck
+- iTerm >
+  - Buffer: cmd+alt+shift+ctrl+P
