@@ -17,6 +17,7 @@ $ ./install.sh base
 - [Postgres](http://postgresapp.com/)
 - [KeePassX](https://www.keepassx.org/downloads)
 - [Firefox](https://firefox.com)
+- [YubiSwitch](https://github.com/pallotron/yubiswitch)
 
 ## Firefox Add-ons
 
@@ -52,7 +53,10 @@ $ ./install.sh base
 	- Application windows: uncheck
 	- Move left a space: ⌃⇧H
 	- Move right a space: ⌃⇧L
+- Keyboard > Shortcuts > Input Sources > Select the previous input source cmd+alt+shift+Y
 - Spotlight >
 	- Show Finder search window: uncheck
 - iTerm >
   - Buffer: cmd+alt+shift+ctrl+P
+- YubiSwitch > Enable Yubikey: cmd+alt+y
+
