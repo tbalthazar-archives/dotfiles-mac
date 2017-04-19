@@ -97,6 +97,9 @@ set undodir=~/.vim/undodir
 " --- window
 set number
 
+" --- always display filepath
+set ls=2
+
 "  -- navigate through grep search results
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
