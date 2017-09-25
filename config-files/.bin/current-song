@@ -1,0 +1,12 @@
+#!/bin/bash
+
+separator=$1
+status=$(mpc --format "" | sed -n 2p | cut -f1 -d" ")
+current_song=$(mpc current)
+
+if [[ $status == "[playing]" ]]; then
+  if [[ $separator != "" ]]; then
+    current_song="$current_song $separator "
+  fi
+  echo $current_song
+fi
