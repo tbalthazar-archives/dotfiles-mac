@@ -9,6 +9,7 @@ alias gc='git commit -a'
 alias gl='git log'
 alias gls='git log --pretty=oneline'
 alias gamend='git commit --amend --no-edit'
+alias gsu='git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`'
 alias gemi='gem install --no-rdoc --no-ri'
 alias gemu='gem update --no-rdoc --no-ri'
 alias gvim="gvim 2>/dev/null"
