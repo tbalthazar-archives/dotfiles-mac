@@ -40,6 +40,7 @@ let g:CommandTAcceptSelectionSplitMap='<C-p>'
 
 " --- set the ctag file
 set tags=./tags;
+nnoremap t <C-]>
 
 " --- Use Ack instead of grep
 " set grepprg=ack-grep
