@@ -39,7 +39,7 @@ let g:CommandTSelectPrevMap='<C-k>'
 let g:CommandTAcceptSelectionSplitMap='<C-p>'
 
 " --- set the ctag file
-set tags=./tags;
+set tags=./tags.ctags;
 nnoremap t <C-]>
 
 " --- Use Ack instead of grep
